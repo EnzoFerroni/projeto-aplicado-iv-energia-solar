@@ -1,18 +1,14 @@
-# dados brutos e processados
-data/raw/*
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+# dados baixados da ANEEL
+data/*
+!data/README.md
 *.zip
 *.csv
 *.parquet
 
 # python
 __pycache__/
-*.py[cod]
-.venv/
-venv/
 .ipynb_checkpoints/
+.venv/
 
 # so
 .DS_Store
