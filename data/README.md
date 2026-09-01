@@ -6,7 +6,7 @@ Os dados brutos **não são versionados** neste repositório (volume elevado e a
 
 Relação de empreendimentos de Mini e Micro Geração Distribuída (Portal de Dados Abertos da ANEEL):
 
-https://dadosabertos.aneel.gov.br/pt_BR/dataset/relacao-de-empreendimentos-de-geracao-distribuida
+https://dadosabertos.aneel.gov.br/dataset/relacao-de-empreendimentos-de-geracao-distribuida
 
 Baixe o arquivo em CSV/Parquet e salve nesta pasta como `data/raw/`. O notebook em
 `notebooks/projeto_aplicado_IV_doc.ipynb` também realiza o download direto da fonte.
