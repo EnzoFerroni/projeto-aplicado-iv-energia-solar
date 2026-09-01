@@ -83,10 +83,8 @@ Avaliação por validação em janelas temporais, com métricas MAE, RMSE e MAPE
 ```
 ├── README.md
 ├── .gitignore
-├── docs/
-│   └── PA4_Etapa1_Proposta.docx      # documento inicial do projeto (Etapa 1)
 ├── notebooks/
-│   └── projeto_aplicado_IV_doc.ipynb # documentação do projeto em notebook
+│   └── projeto_aplicado_IV_doc.ipynb # documento inicial do projeto (Etapa 1)
 ├── data/
 │   └── README.md                     # origem dos dados (dados brutos não versionados)
 └── figuras/
