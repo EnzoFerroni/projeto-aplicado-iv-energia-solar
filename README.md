@@ -41,13 +41,14 @@ solares fotovoltaicas, agregados em periodicidade mensal a partir da data de con
 <p align="left">
   <img src="figuras/sdg_08.png" width="12%"/>
   <img src="figuras/sdg_11.png" width="12%"/>
-  <img src="figuras/sdg_07.png" width="12%"/>
+  <img src="figuras/sdg_16.png" width="12%"/>
 </p>
+
+O projeto se relaciona aos três ODS definidos para o semestre:
 
 - **ODS 8 — Trabalho decente e crescimento econômico:** cadeia produtiva e investimentos mobilizados pelo setor solar.
 - **ODS 11 — Cidades e comunidades sustentáveis:** descentralização da geração e redução da pressão sobre a infraestrutura de transmissão.
-
-De forma transversal, o projeto dialoga com o ODS 7 (energia limpa e acessível).
+- **ODS 16 — Paz, justiça e instituições eficazes:** especificamente pelas metas **16.6** (instituições eficazes, responsáveis e transparentes) e **16.10** (acesso público à informação). O projeto se apoia integralmente em dados abertos publicados pelo regulador e converte esse acervo em evidência sobre os efeitos da Lei nº 14.300/2022, ampliando a capacidade de escrutínio público sobre uma política setorial.
 
 ## Base de dados
 
