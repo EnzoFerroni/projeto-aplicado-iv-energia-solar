@@ -31,13 +31,13 @@ Objetivos específicos:
 
 <p align="left">
   <img src="figuras/sdg_08.png" width="10%"/>
-  <img src="figuras/sdg_09.png" width="10%"/>
   <img src="figuras/sdg_11.png" width="10%"/>
+  <img src="figuras/sdg_16.png" width="10%"/>
 </p>
 
-- **ODS 8** — Trabalho decente e crescimento econômico: movimentação econômica e geração de empregos do setor solar.
-- **ODS 11** — Cidades e comunidades sustentáveis: incentivo à geração limpa e descentralizada em áreas urbanas.
-- **ODS 9** (complementar) — Indústria, inovação e infraestrutura: modernização da infraestrutura energética.
+- **ODS 8** — Trabalho decente e crescimento econômico: a expansão da geração distribuída movimenta investimentos, cadeia produtiva e empregos no setor solar.
+- **ODS 11** — Cidades e comunidades sustentáveis: a geração limpa e descentralizada em unidades consumidoras urbanas apoia cidades mais sustentáveis.
+- **ODS 16** — Paz, justiça e instituições eficazes: o projeto se apoia integralmente em dados abertos governamentais (ANEEL e EPE) e devolve à sociedade indicadores transparentes e reprodutíveis sobre a expansão da geração distribuída, apoiando a fiscalização e a formulação de políticas públicas baseadas em evidência.
 
 ## Base de dados
 
@@ -66,17 +66,11 @@ Modelos candidatos para a série mensal de potência instalada: média móvel/ba
 
 ```
 .
-├── README.md                       # apresentação do projeto
-├── docs/
-│   ├── PA4_Etapa1_Proposta.docx    # documento da Etapa 1
-│   └── ETAPA1.md                   # proposta em markdown (contexto, motivação, objetivo, justificativa)
-├── notebooks/
-│   └── projeto_aplicado_IV_doc.ipynb   # documentação/notebook do projeto (template da disciplina)
-├── data/
-│   └── README.md                   # instruções de obtenção dos dados (dados brutos não versionados)
-├── figuras/                        # imagens usadas na documentação
-├── src/                            # scripts auxiliares (etapas seguintes)
-└── requirements.txt
+├── README.md                               # apresentação do projeto
+├── docs/PA4_Etapa1_Proposta.docx           # documento da Etapa 1
+├── notebooks/projeto_aplicado_IV_doc.ipynb # documentação do projeto (template da disciplina)
+├── data/README.md                          # obtenção dos dados (brutos não versionados)
+└── figuras/                                # imagens usadas na documentação
 ```
 
 ## Cronograma da disciplina
