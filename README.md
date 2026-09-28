@@ -78,16 +78,31 @@ exponencial e ARIMA/SARIMA como referência estatística clássica, Prophet pela
 robustez a mudanças de tendência, e modelos baseados em árvores como alternativa.
 Avaliação por validação em janelas temporais, com métricas MAE, RMSE e MAPE.
 
+## Pipeline da solução
+
+A solução segue sete etapas encadeadas, da coleta dos dados da ANEEL às previsões
+finais, todas executadas no mesmo notebook.
+
+![Pipeline da solução](figuras/pipeline_solucao.png)
+
 ## Estrutura do repositório
 
 ```
 ├── README.md
+├── Cronograma.md                     # cronograma detalhado (tabelas, mermaid, marcos)
 ├── .gitignore
 ├── notebooks/
 │   └── projeto_aplicado_IV_doc.ipynb # documento inicial do projeto (Etapa 1)
 ├── data/
 │   └── README.md                     # origem dos dados (dados brutos não versionados)
+├── docs/
+│   └── cronograma.csv                # cronograma detalhado (fonte do Gantt)
+├── scripts/
+│   ├── gerar_figuras_etapa2.py       # gera as figuras da Etapa 2
+│   └── gerar_cronograma_md.py        # gera o Cronograma.md
 └── figuras/
+    ├── pipeline_solucao.png          # pipeline da solução (Etapa 2)
+    └── cronograma_gantt.png          # cronograma em Gantt (Etapa 2)
 ```
 
 Os dados brutos não são versionados neste repositório, em razão do volume e da
@@ -98,9 +113,11 @@ atualização diária na fonte. Ver [`data/README.md`](data/README.md).
 | Etapa | Prazo | Conteúdo | Situação |
 |---|---|---|---|
 | 1 | 31/08/2026 | Definição do projeto, equipe, base de dados e documento inicial | Concluída |
-| 2 | 28/09/2026 | Referencial teórico, pipeline da solução e cronograma | — |
+| 2 | 28/09/2026 | Referencial teórico, pipeline da solução e cronograma | Concluída |
 | 3 | 26/10/2026 | Análise exploratória, pré-processamento e modelo base | — |
 | 4 | 30/11/2026 | Comparação de modelos, resultados e entrega final | — |
+
+O cronograma detalhado com todas as atividades está em [Cronograma.md](Cronograma.md).
 
 ## Referências
 
@@ -108,7 +125,15 @@ AGÊNCIA NACIONAL DE ENERGIA ELÉTRICA. **Micro e minigeração distribuída.** 
 
 AGÊNCIA NACIONAL DE ENERGIA ELÉTRICA. **Relação de empreendimentos de mini e micro geração distribuída.** Brasília: Portal de Dados Abertos da ANEEL, 2026b. Disponível em: https://dadosabertos.aneel.gov.br/dataset/relacao-de-empreendimentos-de-geracao-distribuida. Acesso em: 1 set. 2026.
 
+BASS, F. M. A new product growth for model consumer durables. **Management Science,** v. 15, n. 5, p. 215-227, 1969.
+
+BOX, G. E. P.; COX, D. R. An analysis of transformations. **Journal of the Royal Statistical Society: Series B,** v. 26, n. 2, p. 211-252, 1964.
+
 BRASIL. **Lei nº 14.300, de 6 de janeiro de 2022.** Institui o marco legal da microgeração e minigeração distribuída, o Sistema de Compensação de Energia Elétrica (SCEE) e o Programa de Energia Renovável Social (PERS). Brasília, DF: Presidência da República, 2022. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14300.htm. Acesso em: 1 set. 2026.
+
+CLEVELAND, R. B.; CLEVELAND, W. S.; McRAE, J. E.; TERPENNING, I. STL: a seasonal-trend decomposition procedure based on loess. **Journal of Official Statistics,** v. 6, n. 1, p. 3-73, 1990.
+
+COSTA, V. B. F.; SCIANNI, L.; MIRANDA, R. C.; BONATTO, B. D. Assessment of the status and trends of photovoltaic distributed generation in Brazil: an in-depth approach based on big data processing. **Solar Energy,** v. 249, p. 694-711, 2023. DOI: 10.1016/j.solener.2022.12.018.
 
 EMPRESA DE PESQUISA ENERGÉTICA. **Micro e minigeração distribuída & baterias atrás do medidor:** Plano Decenal de Expansão de Energia 2035. Rio de Janeiro: EPE, 2025.
 
@@ -116,6 +141,14 @@ EMPRESA DE PESQUISA ENERGÉTICA. **Painel de dados de micro e minigeração dist
 
 HYNDMAN, R. J.; ATHANASOPOULOS, G. **Forecasting: principles and practice.** 3. ed. Melbourne: OTexts, 2021. Disponível em: https://otexts.com/fpp3/. Acesso em: 1 set. 2026.
 
+MAKRIDAKIS, S.; SPILIOTIS, E.; ASSIMAKOPOULOS, V. M5 accuracy competition: results, findings, and conclusions. **International Journal of Forecasting,** v. 38, n. 4, p. 1346-1364, 2022. DOI: 10.1016/j.ijforecast.2021.11.013.
+
+MEJDALANI, A.; LÓPEZ SOTO, D.; HALLACK, M. **The impact of net metering policy design on the adoption rate of solar photovoltaic systems:** a simulation using calibrated data from Brazil. Washington, DC: Inter-American Development Bank, 2018. (IDB Technical Note, 1593).
+
 ORGANIZAÇÃO DAS NAÇÕES UNIDAS. **Objetivos de desenvolvimento sustentável.** Brasília: ONU Brasil, 2026. Disponível em: https://brasil.un.org/pt-br/sdgs. Acesso em: 1 set. 2026.
 
+TAVARES, H. P.; CHRISTO, E. S. Forecasting Brazil's energy matrix evolution: a multi-method approach to evaluate alignment with SDG 7.2. **Green Energy and Environmental Technology,** 2025. DOI: 10.5772/geet20250064.
+
 TAYLOR, S. J.; LETHAM, B. Forecasting at scale. **The American Statistician,** v. 72, n. 1, p. 37-45, 2018. DOI: 10.1080/00031305.2017.1380080.
+
+TOKUUE, D. A. A. **Análise e aplicação de previsões de séries temporais para o crescimento da geração distribuída de energia fotovoltaica no Brasil.** 2024. Trabalho de Conclusão de Curso (Graduação em Engenharia de Produção), Universidade Federal de Santa Catarina, Florianópolis, 2024. Disponível em: https://repositorio.ufsc.br/handle/123456789/255886. Acesso em: 28 set. 2026.

@@ -3,6 +3,7 @@ data/*
 !data/README.md
 *.zip
 *.csv
+!docs/cronograma.csv
 *.parquet
 
 # python
