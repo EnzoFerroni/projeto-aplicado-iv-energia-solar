@@ -92,7 +92,7 @@ finais, todas executadas no mesmo notebook.
 ├── Cronograma.md                     # cronograma detalhado (tabelas, mermaid, marcos)
 ├── .gitignore
 ├── notebooks/
-│   └── projeto_aplicado_IV_doc.ipynb # documento inicial do projeto (Etapa 1)
+│   └── projeto_aplicado_IV_doc.ipynb # documento do projeto (Etapas 1 e 2)
 ├── data/
 │   └── README.md                     # origem dos dados (dados brutos não versionados)
 ├── docs/
