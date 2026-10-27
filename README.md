@@ -108,6 +108,7 @@ As versões usadas nos resultados salvos aparecem na primeira célula de código
 ```
 ├── README.md
 ├── Cronograma.md                     # cronograma detalhado (tabelas, situação, mermaid, marcos)
+├── LICENSE                           # licença MIT
 ├── .gitignore
 ├── notebooks/
 │   └── projeto_aplicado_IV_doc.ipynb # documento do projeto (Etapas 1, 2 e 3), com EDA e modelos
@@ -140,6 +141,12 @@ atualização diária na fonte. Ver [`data/README.md`](data/README.md).
 | 4 | 30/11/2026 | Comparação de modelos, resultados e entrega final | — |
 
 O cronograma detalhado com todas as atividades está em [Cronograma.md](Cronograma.md).
+
+## Licença
+
+O código e a documentação deste repositório estão sob a [licença MIT](LICENSE), em nome de
+Daniel dos Santos da Silva, Enzo Ferroni e Vinícius de Souza Sabiá. Os dados da ANEEL não fazem
+parte do repositório e seguem os termos de uso do Portal de Dados Abertos da ANEEL.
 
 ## Referências
 
