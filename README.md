@@ -5,6 +5,17 @@
 **Projeto Aplicado IV — Ciência de Dados EaD — 2026/02**
 Universidade Presbiteriana Mackenzie — Faculdade de Computação e Informática
 
+[![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)](https://www.python.org)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/EnzoFerroni/projeto-aplicado-iv-energia-solar/blob/main/notebooks/projeto_aplicado_IV_doc.ipynb)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
+> **English summary.** Time-series analysis and forecasting of distributed solar
+> generation growth in Brazil, using ANEEL's open data on micro and mini distributed
+> generation. The notebook downloads the data, builds monthly national and per-state
+> series, runs exploratory analysis and compares forecasting models (ETS and SARIMA
+> baselines) with MAE, RMSE and MAPE. Applied Project IV, Data Science, Universidade
+> Presbiteriana Mackenzie (2026). The documentation below is in Portuguese.
 ---
 
 ## Equipe
