@@ -9,10 +9,10 @@ import matplotlib.dates as mdates
 etapas = [
     ("1. Coleta", "Download do Parquet\nda ANEEL\n(dados abertos)\n→ data/raw", "#1f4e79"),
     ("2. Limpeza", "Filtro da fonte solar,\ntipos e duplicados,\ndatas e potências\ninválidas", "#1f4e79"),
-    ("3. Séries mensais", "Agregação por mês\nde conexão, Brasil\ne 27 UFs · conexões,\nkW novo e acumulado", "#2e75b6"),
+    ("3. Séries mensais", "Agregação por mês\nde conexão, Brasil\ne 27 UFs · corte da\nponta incompleta", "#2e75b6"),
     ("4. Análise exploratória", "Gráficos, ACF/PACF,\nADF/KPSS, STL, Box-Cox,\ndummy Lei 14.300", "#2e75b6"),
-    ("5. Modelagem", "Baselines (naive sazonal,\ndrift) · ETS · SARIMAX\nProphet · LightGBM", "#c00000"),
-    ("6. Avaliação", "Origem móvel, horizonte\n12 meses · MAE, RMSE,\nMAPE (MASE de apoio)", "#c00000"),
+    ("5. Modelagem", "Referências (ingênuo,\nsazonal, drift) · ETS\nSARIMA(X) · Prophet\nLightGBM · 2016 em diante", "#c00000"),
+    ("6. Avaliação", "Validação e teste de\n12 meses · origem móvel\n(4 origens) · MAE, RMSE,\nMAPE e MASE", "#c00000"),
     ("7. Produto", "Previsões 12–24 meses\ncom intervalos · notebook,\ngráficos e README", "#375623"),
 ]
 
@@ -67,7 +67,8 @@ for i, r in enumerate(rows):
     if marco:
         ax.plot(mdates.date2num(ini) + 0.5, yy, marker="D", color="black", ms=7)
     else:
-        ax.barh(yy, (fim - ini).days + 1, left=mdates.date2num(ini), height=0.6, color=cores[r["etapa"]], alpha=0.9)
+        ax.barh(yy, (fim - ini).days + 1, left=mdates.date2num(ini), height=0.6, color=cores[r["etapa"]], alpha=0.9,
+                hatch="//" if r["situacao"] == "Pendente" else None, edgecolor="white")
 labels = [f'{r["id"]}. {r["atividade"]}' for r in rows]
 ax.set_yticks(range(n)); ax.set_yticklabels(labels[::-1], fontsize=8)
 ax.xaxis.set_major_locator(mdates.WeekdayLocator(byweekday=mdates.MO))
@@ -84,6 +85,7 @@ from matplotlib.patches import Patch
 from matplotlib.lines import Line2D
 ax.legend(handles=[Patch(color=cores["2"], label="Etapa 2"), Patch(color=cores["3"], label="Etapa 3"),
                    Patch(color=cores["4"], label="Etapa 4"),
+                   Patch(facecolor="#999999", hatch="//", edgecolor="white", label="Pendente"),
                    Line2D([], [], marker="D", color="black", ls="", label="Checkpoint / entrega")],
           loc="lower left", fontsize=8, frameon=False)
 ax.set_title("Cronograma do projeto (set. a nov. de 2026)", fontsize=12, weight="bold", loc="left")

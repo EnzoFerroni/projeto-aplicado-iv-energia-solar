@@ -85,24 +85,46 @@ finais, todas executadas no mesmo notebook.
 
 ![Pipeline da solução](figuras/pipeline_solucao.png)
 
+## Como executar
+
+Todo o projeto está no notebook
+[`notebooks/projeto_aplicado_IV_doc.ipynb`](notebooks/projeto_aplicado_IV_doc.ipynb), do download
+dos dados aos modelos. As tabelas e os gráficos já estão salvos no arquivo e podem ser vistos
+direto no GitHub, sem executar nada.
+
+Para executar, abra o notebook no Google Colab pelo link abaixo e use
+*Ambiente de execução > Executar tudo*. Não é preciso instalar nada nem baixar dados à mão.
+
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/EnzoFerroni/projeto-aplicado-iv-energia-solar/blob/main/notebooks/projeto_aplicado_IV_doc.ipynb)
+
+Na primeira célula de dados o notebook baixa a base da ANEEL (cerca de 106 MB) direto do Portal
+de Dados Abertos e, em seguida, gera as séries mensais e os gráficos. A execução completa leva
+poucos minutos. Como os parâmetros do ETS e do SARIMA são estimados por otimização numérica, os
+erros desses modelos podem variar um pouco conforme a versão das bibliotecas instaladas no Colab.
+As versões usadas nos resultados salvos aparecem na primeira célula de código.
+
 ## Estrutura do repositório
 
 ```
 ├── README.md
-├── Cronograma.md                     # cronograma detalhado (tabelas, mermaid, marcos)
+├── Cronograma.md                     # cronograma detalhado (tabelas, situação, mermaid, marcos)
 ├── .gitignore
 ├── notebooks/
-│   └── projeto_aplicado_IV_doc.ipynb # documento do projeto (Etapas 1 e 2)
+│   └── projeto_aplicado_IV_doc.ipynb # documento do projeto (Etapas 1, 2 e 3), com EDA e modelos
 ├── data/
-│   └── README.md                     # origem dos dados (dados brutos não versionados)
+│   ├── README.md                     # origem dos dados
+│   ├── raw/                          # Parquet da ANEEL baixado pelo notebook (não versionado)
+│   └── processed/                    # séries mensais do Brasil e das UFs (não versionadas)
 ├── docs/
-│   └── cronograma.csv                # cronograma detalhado (fonte do Gantt)
+│   └── cronograma.csv                # cronograma detalhado com situação (fonte do Gantt)
 ├── scripts/
-│   ├── gerar_figuras_etapa2.py       # gera as figuras da Etapa 2
+│   ├── gerar_figuras_etapa2.py       # gera o pipeline e o Gantt
 │   └── gerar_cronograma_md.py        # gera o Cronograma.md
 └── figuras/
-    ├── pipeline_solucao.png          # pipeline da solução (Etapa 2)
-    └── cronograma_gantt.png          # cronograma em Gantt (Etapa 2)
+    ├── pipeline_solucao.png          # pipeline da solução (revisado na Etapa 3)
+    ├── cronograma_gantt.png          # cronograma em Gantt (atualizado na Etapa 3)
+    ├── eda_*.png                     # gráficos da análise exploratória (Etapa 3)
+    └── modelo_*.png                  # resíduos e previsões dos modelos base (Etapa 3)
 ```
 
 Os dados brutos não são versionados neste repositório, em razão do volume e da
@@ -114,7 +136,7 @@ atualização diária na fonte. Ver [`data/README.md`](data/README.md).
 |---|---|---|---|
 | 1 | 31/08/2026 | Definição do projeto, equipe, base de dados e documento inicial | Concluída |
 | 2 | 28/09/2026 | Referencial teórico, pipeline da solução e cronograma | Concluída |
-| 3 | 26/10/2026 | Análise exploratória, pré-processamento e modelo base | — |
+| 3 | 26/10/2026 | Análise exploratória, pré-processamento e modelos base (ETS e SARIMA) | Concluída |
 | 4 | 30/11/2026 | Comparação de modelos, resultados e entrega final | — |
 
 O cronograma detalhado com todas as atividades está em [Cronograma.md](Cronograma.md).

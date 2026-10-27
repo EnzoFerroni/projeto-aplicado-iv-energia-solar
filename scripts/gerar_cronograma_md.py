@@ -9,10 +9,11 @@ etapas={"2":("Referencial Teórico e Cronograma","01/09","28/09","Segunda entreg
         "4":("Implementação e Entrega Final","27/10","30/11","Quarta e última entrega: 30 de novembro")}
 curto={ "1":"Levantamento bibliográfico","2":"Referencial teórico","3":"Checkpoint Etapa 2","4":"Pipeline da solução",
  "5":"Cronograma detalhado","6":"Revisão e publicação","7":"Coleta automática ANEEL","8":"Limpeza e filtro solar",
- "9":"Checkpoint Etapa 3","10":"Séries mensais Brasil e UFs","11":"Conferência com EPE","12":"Análise gráfica",
- "13":"ACF PACF e STL","14":"Tratamento das quebras","15":"Modelo base ETS","16":"Entrega Etapa 3",
- "17":"SARIMAX","18":"Prophet","19":"LightGBM global","20":"Checkpoint Etapa 4","21":"Validação e comparação",
- "22":"Previsões finais","23":"Resultados e conclusão","24":"Slides e vídeo","25":"Revisão final e Colab","26":"Entrega final"}
+ "9":"Checkpoint Etapa 3","10":"Séries mensais Brasil e UFs","11":"Análise gráfica","12":"ACF PACF e STL",
+ "13":"Tratamento das quebras","14":"Modelos base ETS e SARIMA","15":"Entrega Etapa 3","16":"Conferência com EPE",
+ "17":"Refinamento SARIMAX","18":"Prophet","19":"LightGBM global","20":"Modelagem por UF","21":"Checkpoint Etapa 4",
+ "22":"Validação e comparação","23":"Previsões finais","24":"Resultados e conclusão","25":"Slides e vídeo",
+ "26":"Revisão final e Colab","27":"Entrega final"}
 rows.sort(key=lambda r:(r["etapa"],d(r["inicio"]),d(r["fim"])))
 def periodo(r): return r["inicio"] if r["inicio"]==r["fim"] else f'{r["inicio"]} - {r["fim"]}'
 def tabelas(nivel):
@@ -20,12 +21,12 @@ def tabelas(nivel):
     for e,(tit,ini,fim,ent) in etapas.items():
         dias=(d(fim)-d(ini)).days+1
         out+= [f'{nivel} ETAPA {e} – {tit} ({dias} dias)',"",f'**{ent}**',"",
-               "| **Período** | **Atividades** | **Responsável** |","| --- | --- | --- |"]
-        out+= [f'| {periodo(r)} | {r["atividade"]} | {nome[r["responsavel"]]} |' for r in rows if r["etapa"]==e]
+               "| **Período** | **Atividades** | **Responsável** | **Situação** |","| --- | --- | --- | --- |"]
+        out+= [f'| {periodo(r)} | {r["atividade"]} | {nome[r["responsavel"]]} | {r["situacao"]} |' for r in rows if r["etapa"]==e]
         out.append("")
     return out
 md=["# Projeto Aplicado IV - Mackenzie (Cronograma Detalhado)","","## Visão Geral","",
-"Este cronograma detalha as atividades previstas para o projeto de análise e previsão do crescimento da energia solar distribuída no Brasil. A Etapa 1 foi concluída em 31/08, e as etapas seguintes estão divididas em atividades com datas e responsáveis definidos, indo além do calendário da disciplina.",""]
+"Este cronograma detalha as atividades previstas para o projeto de análise e previsão do crescimento da energia solar distribuída no Brasil. As Etapas 1, 2 e 3 foram concluídas em 31/08, 28/09 e 26/10. Cada atividade tem datas, responsável e situação (Concluída, Em andamento ou Pendente), indo além do calendário da disciplina. Na Etapa 3 a conferência com o painel da EPE passou para a Etapa 4, e foi incluída a modelagem por UF com ETS e SARIMA.",""]
 md+=tabelas("##")
 md+=["## Linha do Tempo","","```mermaid","gantt","    title Cronograma do Projeto","    dateFormat  YYYY-MM-DD","    axisFormat  %d/%m"]
 for e in etapas:
@@ -46,7 +47,7 @@ for p in ["Daniel","Enzo","Vinícius"]:
 md+=["","As atividades marcadas como Todos (levantamento bibliográfico, checkpoints, validação dos modelos, vídeo e entregas) são feitas em conjunto pelo grupo.","",
 "## Marcos Importantes","","| **Marco** | **Data Prevista** |","| --- | --- |",
 "| Entrega da Etapa 1 (Definição do projeto e equipe) | 31/08/2026 (concluída) |",
-"| Checkpoint da Etapa 2 | 14/09/2026 |","| Entrega da Etapa 2 (Referencial Teórico e Cronograma) | 28/09/2026 |",
-"| Checkpoint da Etapa 3 | 05/10/2026 |","| Entrega da Etapa 3 (Implementação Parcial) | 26/10/2026 |",
+"| Checkpoint da Etapa 2 | 14/09/2026 (concluído) |","| Entrega da Etapa 2 (Referencial Teórico e Cronograma) | 28/09/2026 (concluída) |",
+"| Checkpoint da Etapa 3 | 05/10/2026 (concluído) |","| Entrega da Etapa 3 (Implementação Parcial) | 26/10/2026 (concluída) |",
 "| Checkpoint da Etapa 4 | 09/11/2026 |","| Entrega Final e Vídeo de Apresentação | 30/11/2026 |","","---",""]
 open("Cronograma.md","w",encoding="utf-8").write("\n".join(md))
